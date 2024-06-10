@@ -9,3 +9,15 @@ for (i = 0; i < 16; i++) {
         grid.appendChild(gridSquare);
     }
 }
+
+//Select all divs in the grid
+const fullGrid = document.querySelectorAll(".grid > div");
+
+fullGrid.forEach((square) => {
+    //Add an event listener to each grid div
+    square.addEventListener("mouseover", () => {
+        //Generate a random color value
+        let randomColor = Math.floor(Math.random()*16777215).toString(16);
+        square.style.backgroundColor = "#" + randomColor;
+    });
+});
